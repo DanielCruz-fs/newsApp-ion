@@ -1,3 +1,15 @@
-<p>
-  new works!
-</p>
+<ion-card color="dark">
+  <ion-card-header>
+    <ion-card-subtitle>
+      <span class="text-primary">#{{ index + 1 }}</span>&nbsp;
+      <span class="news-source-name">{{ n.source.name }}</span>
+    </ion-card-subtitle>
+    <ion-card-title class="news-title-size">{{ n.title }}</ion-card-title>
+  </ion-card-header>
+
+  <ion-img *ngIf="n.urlToImage" [src]="n.urlToImage"></ion-img>
+
+  <ion-card-content>
+    <p>{{ n.description }}</p>
+  </ion-card-content>
+</ion-card>
