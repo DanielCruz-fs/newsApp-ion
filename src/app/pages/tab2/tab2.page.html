@@ -4,8 +4,8 @@
       Headlines
     </ion-title>
   </ion-toolbar>
-
-  <ion-segment scrollable mode="md" color="danger">
+  <!-- detecting changes in ion-segment -->
+  <ion-segment scrollable mode="md" color="danger" (ionChange)="changeCategory($event)">
     <ion-segment-button [value]="category" mode="md" *ngFor="let category of categories">
       <ion-label text-capitalize>{{ category }}</ion-label>
     </ion-segment-button>
@@ -13,4 +13,6 @@
 
 </ion-header>
 
-<ion-content color="dark"></ion-content>
+<ion-content color="dark">
+  <app-news [news]="news"></app-news>
+</ion-content>
