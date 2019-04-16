@@ -1,9 +1,18 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title>
-      Tab Three
+      Favorite News
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content color="dark">
+
+  <ion-slides *ngIf="dataLocalService.favNews.length === 0" [options]="sliderOptions">
+    <ion-slide>
+      <ion-label>Your favorite news' is empty.</ion-label>
+    </ion-slide>
+  </ion-slides>
+
+  <app-news *ngIf="dataLocalService.favNews.length > 0" [news]="dataLocalService.favNews" [inFavoritePage]="true"></app-news>
+</ion-content>
